@@ -1,0 +1,9 @@
+ext.configs = [
+        applicationName     : "Google Sheet Crud",
+        applicationId       : "com.ariesmercado.googlesheetcrud",
+        versionCode         : 1,
+        versionName         : "0.0.1",
+        minSdk              : 24,
+        targetSdk           : 33,
+        compileSdk          : 33
+]
