@@ -18,13 +18,12 @@ abstract class BaseActivity<T: BaseViewModel, B: ViewDataBinding> : AppCompatAct
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutId)
 
-        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
-
         initViews()
         subscribe()
     }
 
     fun hideSystemUI() {
+
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN

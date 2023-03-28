@@ -1,5 +1,9 @@
 package com.ariesmercado.googlesheetcrud.di
 
+import com.ariesmercado.googlesheetcrud.data.repository.GoogleSheetRepository
+import com.ariesmercado.googlesheetcrud.domain.use_case.DeleteEmployeeUseCase
+import com.ariesmercado.googlesheetcrud.domain.use_case.GetGoogleSheetUseCase
+import com.ariesmercado.googlesheetcrud.domain.use_case.RegisterEmployeeUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,19 +14,16 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object UseCaseModule {
 
-//    @Provides
-//    @Singleton
-//    fun provideGetExchangeRatesUseCase(repository: CurrencyRepository) = GetExchangeRatesUseCase(repository)
-//
-//    @Provides
-//    @Singleton
-//    fun provideGetCurrencyBalanceUseCase(repository: CurrencyRepository) = GetCurrencyBalanceUseCase(repository)
-//
-//    @Provides
-//    @Singleton
-//    fun provideSetCurrencyBalanceUseCase(repository: CurrencyRepository) = SetCurrencyBalanceUseCase(repository)
-//
-//    @Provides
-//    @Singleton
-//    fun provideResetDataUseCase(repository: CurrencyRepository) = ResetDatasUseCase(repository)
+    @Provides
+    @Singleton
+    fun provideGetGoogleSheetUseCase(repository: GoogleSheetRepository) = GetGoogleSheetUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideRegisterEmployeeUseCase(repository: GoogleSheetRepository) = RegisterEmployeeUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideDeleteEmployeeUseCase(repository: GoogleSheetRepository) = DeleteEmployeeUseCase(repository)
+
 }
